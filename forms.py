@@ -1,28 +1,17 @@
 from datetime import datetime
 from flask_wtf import Form
-from wtforms import StringField, SelectField, SelectMultipleField, DateTimeField, BooleanField
+from wtforms import StringField, SelectField, SelectMultipleField, DateTimeField, BooleanField, SubmitField
 from wtforms.validators import DataRequired, AnyOf, URL
 
 class ShowForm(Form):
-    artist_id = StringField(
-        'artist_id'
-    )
-    venue_id = StringField(
-        'venue_id'
-    )
-    start_time = DateTimeField(
-        'start_time',
-        validators=[DataRequired()],
-        default= datetime.today()
-    )
+    artist_id = StringField('artist_id', validators=[DataRequired()])
+    venue_id = StringField('venue_id', validators=[DataRequired()])
+    start_time = DateTimeField('start_time', validators=[DataRequired()], default= datetime.today())
+    submit = SubmitField('Create Show')
 
 class VenueForm(Form):
-    name = StringField(
-        'name', validators=[DataRequired()]
-    )
-    city = StringField(
-        'city', validators=[DataRequired()]
-    )
+    name = StringField('name', validators=[DataRequired()])
+    city = StringField('city', validators=[DataRequired()])
     state = SelectField(
         'state', validators=[DataRequired()],
         choices=[
@@ -79,15 +68,9 @@ class VenueForm(Form):
             ('WY', 'WY'),
         ]
     )
-    address = StringField(
-        'address', validators=[DataRequired()]
-    )
-    phone = StringField(
-        'phone'
-    )
-    image_link = StringField(
-        'image_link'
-    )
+    address = StringField('address', validators=[DataRequired()])
+    phone = StringField('phone')
+    image_link = StringField('image_link')
     genres = SelectMultipleField(
         # TODO implement enum restriction
         'genres', validators=[DataRequired()],
@@ -107,34 +90,23 @@ class VenueForm(Form):
             ('Pop', 'Pop'),
             ('Punk', 'Punk'),
             ('R&B', 'R&B'),
+            ('Swing', 'Swing'),
             ('Reggae', 'Reggae'),
             ('Rock n Roll', 'Rock n Roll'),
             ('Soul', 'Soul'),
             ('Other', 'Other'),
         ]
     )
-    facebook_link = StringField(
-        'facebook_link', validators=[URL()]
-    )
-    website_link = StringField(
-        'website_link'
-    )
-
+    facebook_link = StringField('facebook_link', validators=[URL()])
+    website_link = StringField('website_link', validators=[URL()])
     seeking_talent = BooleanField( 'seeking_talent' )
-
-    seeking_description = StringField(
-        'seeking_description'
-    )
-
+    seeking_description = StringField('seeking_description')
+    submit = SubmitField('Create Venue')
 
 
 class ArtistForm(Form):
-    name = StringField(
-        'name', validators=[DataRequired()]
-    )
-    city = StringField(
-        'city', validators=[DataRequired()]
-    )
+    name = StringField('name', validators=[DataRequired()])
+    city = StringField('city', validators=[DataRequired()])
     state = SelectField(
         'state', validators=[DataRequired()],
         choices=[
@@ -195,9 +167,7 @@ class ArtistForm(Form):
         # TODO implement validation logic for state
         'phone'
     )
-    image_link = StringField(
-        'image_link'
-    )
+    image_link = StringField('image_link')
     genres = SelectMultipleField(
         'genres', validators=[DataRequired()],
         choices=[
@@ -222,18 +192,13 @@ class ArtistForm(Form):
             ('Other', 'Other'),
         ]
      )
-    facebook_link = StringField(
-        # TODO implement enum restriction
-        'facebook_link', validators=[URL()]
-     )
-
-    website_link = StringField(
-        'website_link'
-     )
-
+    # facebook_link = StringField(
+    #     # TODO implement enum restriction
+    #     'facebook_link', validators=[URL()]
+    #  )
+    facebook_link = StringField('facebook_link', validators=[URL()])
+    website_link = StringField('website_link')
     seeking_venue = BooleanField( 'seeking_venue' )
-
-    seeking_description = StringField(
-            'seeking_description'
-     )
+    seeking_description = StringField('seeking_description')
+    submit = SubmitField('Create Artist')
 
