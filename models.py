@@ -4,13 +4,15 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from sqlalchemy.dialects import postgresql
 
-app = Flask(__name__)
-moment = Moment(app)
-app.config.from_object('config')
-app.config['SQLALCHEMY_TRACK_MMODIFICATIONS'] = False
-db = SQLAlchemy(app)
+db = SQLAlchemy()
 
-migrate = Migrate(app, db)
+# connect to a local postgresql database
+def db_setup(app):
+    app.config.from_object('config')
+    db.app = app
+    db.init_app(app)
+    migrate = Migrate(app, db)
+    return db
 
 
 #----------------------------------------------------------------------------#

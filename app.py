@@ -17,9 +17,9 @@ from models import *
 
 app = Flask(__name__)
 moment = Moment(app)
-app.config.from_object('config')
 app.config['SQLALCHEMY_TRACK_MMODIFICATIONS'] = False
-db = SQLAlchemy(app)
+
+db = db_setup(app)
 
 migrate = Migrate(app, db)
 
@@ -91,32 +91,31 @@ def search_venues():
 
 @app.route('/venues/<int:venue_id>')
 def show_venue(venue_id):
-  upcoming_shows = []
-  past_shows = []
-  current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
   venue = Venue.query.get(venue_id)
-  shows = Show.query.filter_by(venue_id=venue_id)
-  upcoming_shows_count = 0
-  past_shows_count = 0
-  for show in shows:
-    artist = Artist.query.get(show.artist_id)
-    if show.start_time > current_time:
-      upcoming_shows_count+=1
+  current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+  
+  upcoming_shows_query = db.session.query(Show).join(Venue).filter(Show.venue_id==venue_id).filter(Show. start_time>current_time).all()   
+  upcoming_shows = []
+  for show in upcoming_shows_query:
       upcoming_shows.append({
-        "artist_id": show.venue_id,
-        "artist_name": artist.name,
-        "artist_image_link": artist.image_link,
+        "artist_id": show.artist_id,
+        "artist_name": show.artist.name,
+        "artist_image_link": show.venue.image_link,
         "start_time": show.start_time,
       })
-    else:
-      past_shows_count+=1
+
+  past_shows_query = db.session.query(Show).join(Venue).filter(Show.venue_id==venue_id).filter(Show.start_time<current_time).all()   
+  past_shows = []
+  for show in past_shows_query:
       past_shows.append({
-        "artist_id": show.venue_id,
-        "artist_name": artist.name,
-        "artist_image_link":artist.image_link,
+        "artist_id": show.artist_id,
+        "artist_name": show.artist.name,
+        "artist_image_link": show.artist.image_link,
         "start_time": show.start_time,
       })
-  return render_template('pages/show_venue.html', venue=venue, past_shows=past_shows, upcoming_shows=upcoming_shows, past_shows_count=past_shows_count, upcoming_shows_count=upcoming_shows_count)
+  upcoming_shows_count = len(upcoming_shows)
+  past_shows_count = len(past_shows)
+  return render_template('pages/show_venue.html', venue=venue, past_shows=past_shows, upcoming_shows=upcoming_shows, upcoming_shows_count=upcoming_shows_count, past_shows_count=past_shows_count)
 
 #  Create Venue
 #  ----------------------------------------------------------------
@@ -151,7 +150,8 @@ def create_venue_submission():
     return redirect(url_for('index'))
   else:
     # on unsuccessful db insert, flash an error instead.
-    flash('An error occured. Venue ' + request.form['name'] + ' could not be listed!')
+    for field, message in form.errors.items():
+      flash(field + ' - ' + str(message), 'danger')
   return render_template('pages/home.html')
 
 @app.route('/venues/<int:venue_id>/delete', methods=['POST'])
@@ -180,34 +180,31 @@ def search_artists():
 
 @app.route('/artists/<int:artist_id>')
 def show_artist(artist_id):
-  upcoming_shows = []
-  past_shows = []
-  current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
   artist = Artist.query.get(artist_id)
-  shows = Show.query.filter_by(artist_id=artist_id)
-  upcoming_shows_count = 0
-  past_shows_count = 0
-  for show in shows:
-    venue = Venue.query.get(show.venue_id)
-    count = 0
-    if show.start_time > current_time:
-      upcoming_shows_count+=1
+  current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+  
+  upcoming_shows_query = db.session.query(Show).join(Venue).filter(Show.artist_id==artist_id).filter(Show. start_time>current_time).all()   
+  upcoming_shows = []
+  for show in upcoming_shows_query:
       upcoming_shows.append({
         "venue_id": show.venue_id,
-        "venue_name": venue.name,
-        "venue_image_link": venue.image_link,
+        "venue_name": show.venue.name,
+        "venue_image_link": show.venue.image_link,
         "start_time": show.start_time,
       })
-    else:
-      past_shows_count+=1
+
+  past_shows_query = db.session.query(Show).join(Venue).filter(Show.artist_id==artist_id).filter(Show.start_time<current_time).all()   
+  past_shows = []
+  for show in past_shows_query:
       past_shows.append({
-        "count": count,
         "venue_id": show.venue_id,
-        "venue_name": venue.name,
-        "venue_image_link":venue.image_link,
+        "venue_name": past_shows_query.venue.name,
+        "venue_image_link": show.venue.image_link,
         "start_time": show.start_time,
       })
-  return render_template('pages/show_artist.html', artist=artist, past_shows=past_shows, upcoming_shows=upcoming_shows, past_shows_count=past_shows_count, upcoming_shows_count=upcoming_shows_count)
+  upcoming_shows_count = len(upcoming_shows)
+  past_shows_count = len(past_shows)
+  return render_template('pages/show_artist.html', artist=artist, past_shows=past_shows, upcoming_shows=upcoming_shows, upcoming_shows_count=upcoming_shows_count, past_shows_count=past_shows_count)
 
 #  Update
 #  ----------------------------------------------------------------
@@ -252,8 +249,8 @@ def edit_artist_submission(artist_id):
     return redirect(url_for('index'))
   else:
     # on unsuccessful db insert, flash an error instead.
-    flash('An error occured. Artist ' + request.form['name'] + ' could not be updated!')
-    # see: http://flask.pocoo.org/docs/1.0/patterns/flashing/
+    for field, message in form.errors.items():
+      flash(field + ' - ' + str(message), 'danger')
 
   return redirect(url_for('show_artist', artist_id=artist_id))
 
@@ -300,7 +297,8 @@ def edit_venue_submission(venue_id):
     return redirect(url_for('index'))
   else:
     # on unsuccessful db insert, flash an error instead.
-    flash('An error occured. Venue ' + request.form['name'] + ' could not be updated!')
+    for field, message in form.errors.items():
+      flash(field + ' - ' + str(message), 'danger')
   return redirect(url_for('show_venue', venue_id=venue_id))
 
 #  Create Artist
@@ -335,7 +333,8 @@ def create_artist_submission():
     return redirect(url_for('index'))
   else:
     # on unsuccessful db insert, flash an error instead.
-    flash('An error occured. Artist ' + request.form['name'] + ' could not be listed!')
+    for field, message in form.errors.items():
+      flash(field + ' - ' + str(message), 'danger')
   return render_template('pages/home.html')
 
 
@@ -385,7 +384,8 @@ def create_show_submission():
     return redirect(url_for('index'))
   else:
     # on unsuccessful db insert, flash an error instead.
-    flash('An error occured. Show could not be listed!')
+    for field, message in form.errors.items():
+      flash(field + ' - ' + str(message), 'danger')
   return render_template('pages/home.html')
 
 @app.errorhandler(404)
