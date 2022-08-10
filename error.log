@@ -1,1 +1,867 @@
 
+2022-08-10 12:01:52,357 INFO: errors [in /media/schade/New Volume1/ALX/Fyyur/app.py:780]
+2022-08-10 12:18:48,119 ERROR: Exception on /venues/create [GET] [in /media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/media/schade/New Volume1/ALX/Fyyur/app.py", line 308, in create_venue_form
+    @app.route('/artists/create', methods=['POST'])
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 208, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 157, in __init__
+    super(Form, self).__init__(*args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 87, in __init__
+    super(FlaskForm, self).__init__(formdata=formdata, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 286, in __init__
+    self.process(formdata, obj, data=data, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 127, in process
+    field.process(formdata, data, extra_filters=field_extra_filters)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/csrf/core.py", line 44, in process
+    self.current_token = self.csrf_impl.generate_csrf_token(self)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 139, in generate_csrf_token
+    return generate_csrf(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 33, in generate_csrf
+    secret_key = _get_config(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 128, in _get_config
+    raise RuntimeError(message)
+RuntimeError: A secret key is required to use CSRF.
+2022-08-10 12:18:56,221 ERROR: Exception on /artists/create [GET] [in /media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/media/schade/New Volume1/ALX/Fyyur/app.py", line 634, in create_artist_form
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 208, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 157, in __init__
+    super(Form, self).__init__(*args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 87, in __init__
+    super(FlaskForm, self).__init__(formdata=formdata, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 286, in __init__
+    self.process(formdata, obj, data=data, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 127, in process
+    field.process(formdata, data, extra_filters=field_extra_filters)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/csrf/core.py", line 44, in process
+    self.current_token = self.csrf_impl.generate_csrf_token(self)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 139, in generate_csrf_token
+    return generate_csrf(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 33, in generate_csrf
+    secret_key = _get_config(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 128, in _get_config
+    raise RuntimeError(message)
+RuntimeError: A secret key is required to use CSRF.
+2022-08-10 12:19:05,535 ERROR: Exception on /artists/create [GET] [in /media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/media/schade/New Volume1/ALX/Fyyur/app.py", line 634, in create_artist_form
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 208, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 157, in __init__
+    super(Form, self).__init__(*args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 87, in __init__
+    super(FlaskForm, self).__init__(formdata=formdata, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 286, in __init__
+    self.process(formdata, obj, data=data, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 127, in process
+    field.process(formdata, data, extra_filters=field_extra_filters)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/csrf/core.py", line 44, in process
+    self.current_token = self.csrf_impl.generate_csrf_token(self)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 139, in generate_csrf_token
+    return generate_csrf(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 33, in generate_csrf
+    secret_key = _get_config(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 128, in _get_config
+    raise RuntimeError(message)
+RuntimeError: A secret key is required to use CSRF.
+2022-08-10 12:19:06,627 ERROR: Exception on /artists/create [GET] [in /media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/media/schade/New Volume1/ALX/Fyyur/app.py", line 634, in create_artist_form
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 208, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 157, in __init__
+    super(Form, self).__init__(*args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 87, in __init__
+    super(FlaskForm, self).__init__(formdata=formdata, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 286, in __init__
+    self.process(formdata, obj, data=data, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 127, in process
+    field.process(formdata, data, extra_filters=field_extra_filters)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/csrf/core.py", line 44, in process
+    self.current_token = self.csrf_impl.generate_csrf_token(self)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 139, in generate_csrf_token
+    return generate_csrf(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 33, in generate_csrf
+    secret_key = _get_config(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 128, in _get_config
+    raise RuntimeError(message)
+RuntimeError: A secret key is required to use CSRF.
+2022-08-10 12:19:10,627 ERROR: Exception on /artists/create [GET] [in /media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/media/schade/New Volume1/ALX/Fyyur/app.py", line 634, in create_artist_form
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 208, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 157, in __init__
+    super(Form, self).__init__(*args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 87, in __init__
+    super(FlaskForm, self).__init__(formdata=formdata, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 286, in __init__
+    self.process(formdata, obj, data=data, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 127, in process
+    field.process(formdata, data, extra_filters=field_extra_filters)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/csrf/core.py", line 44, in process
+    self.current_token = self.csrf_impl.generate_csrf_token(self)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 139, in generate_csrf_token
+    return generate_csrf(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 33, in generate_csrf
+    secret_key = _get_config(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 128, in _get_config
+    raise RuntimeError(message)
+RuntimeError: A secret key is required to use CSRF.
+2022-08-10 12:19:14,065 ERROR: Exception on /shows/create [GET] [in /media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/media/schade/New Volume1/ALX/Fyyur/app.py", line 736, in create_shows
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 208, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 157, in __init__
+    super(Form, self).__init__(*args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 87, in __init__
+    super(FlaskForm, self).__init__(formdata=formdata, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 286, in __init__
+    self.process(formdata, obj, data=data, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 127, in process
+    field.process(formdata, data, extra_filters=field_extra_filters)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/csrf/core.py", line 44, in process
+    self.current_token = self.csrf_impl.generate_csrf_token(self)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 139, in generate_csrf_token
+    return generate_csrf(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 33, in generate_csrf
+    secret_key = _get_config(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 128, in _get_config
+    raise RuntimeError(message)
+RuntimeError: A secret key is required to use CSRF.
+2022-08-10 12:19:30,819 ERROR: Exception on /venues/create [GET] [in /media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/media/schade/New Volume1/ALX/Fyyur/app.py", line 308, in create_venue_form
+    @app.route('/artists/create', methods=['POST'])
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 208, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 157, in __init__
+    super(Form, self).__init__(*args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 87, in __init__
+    super(FlaskForm, self).__init__(formdata=formdata, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 286, in __init__
+    self.process(formdata, obj, data=data, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 127, in process
+    field.process(formdata, data, extra_filters=field_extra_filters)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/csrf/core.py", line 44, in process
+    self.current_token = self.csrf_impl.generate_csrf_token(self)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 139, in generate_csrf_token
+    return generate_csrf(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 33, in generate_csrf
+    secret_key = _get_config(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 128, in _get_config
+    raise RuntimeError(message)
+RuntimeError: A secret key is required to use CSRF.
+2022-08-10 12:19:40,949 ERROR: Exception on /venues/create [GET] [in /media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/media/schade/New Volume1/ALX/Fyyur/app.py", line 308, in create_venue_form
+    @app.route('/artists/create', methods=['POST'])
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 208, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 157, in __init__
+    super(Form, self).__init__(*args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 87, in __init__
+    super(FlaskForm, self).__init__(formdata=formdata, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 286, in __init__
+    self.process(formdata, obj, data=data, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 127, in process
+    field.process(formdata, data, extra_filters=field_extra_filters)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/csrf/core.py", line 44, in process
+    self.current_token = self.csrf_impl.generate_csrf_token(self)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 139, in generate_csrf_token
+    return generate_csrf(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 33, in generate_csrf
+    secret_key = _get_config(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 128, in _get_config
+    raise RuntimeError(message)
+RuntimeError: A secret key is required to use CSRF.
+2022-08-10 12:19:41,973 ERROR: Exception on /venues/create [GET] [in /media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/media/schade/New Volume1/ALX/Fyyur/app.py", line 308, in create_venue_form
+    @app.route('/artists/create', methods=['POST'])
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 208, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 157, in __init__
+    super(Form, self).__init__(*args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 87, in __init__
+    super(FlaskForm, self).__init__(formdata=formdata, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 286, in __init__
+    self.process(formdata, obj, data=data, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 127, in process
+    field.process(formdata, data, extra_filters=field_extra_filters)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/csrf/core.py", line 44, in process
+    self.current_token = self.csrf_impl.generate_csrf_token(self)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 139, in generate_csrf_token
+    return generate_csrf(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 33, in generate_csrf
+    secret_key = _get_config(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 128, in _get_config
+    raise RuntimeError(message)
+RuntimeError: A secret key is required to use CSRF.
+2022-08-10 12:19:46,072 ERROR: Exception on /venues/create [GET] [in /media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/media/schade/New Volume1/ALX/Fyyur/app.py", line 308, in create_venue_form
+    @app.route('/artists/create', methods=['POST'])
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 208, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 157, in __init__
+    super(Form, self).__init__(*args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 87, in __init__
+    super(FlaskForm, self).__init__(formdata=formdata, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 286, in __init__
+    self.process(formdata, obj, data=data, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 127, in process
+    field.process(formdata, data, extra_filters=field_extra_filters)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/csrf/core.py", line 44, in process
+    self.current_token = self.csrf_impl.generate_csrf_token(self)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 139, in generate_csrf_token
+    return generate_csrf(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 33, in generate_csrf
+    secret_key = _get_config(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 128, in _get_config
+    raise RuntimeError(message)
+RuntimeError: A secret key is required to use CSRF.
+2022-08-10 12:20:11,202 ERROR: Exception on /venues/create [GET] [in /media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/media/schade/New Volume1/ALX/Fyyur/app.py", line 308, in create_venue_form
+    flash('Artist ' + request.form['name'] + ' was successfully updated!')
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 208, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 157, in __init__
+    super(Form, self).__init__(*args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 87, in __init__
+    super(FlaskForm, self).__init__(formdata=formdata, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 286, in __init__
+    self.process(formdata, obj, data=data, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 127, in process
+    field.process(formdata, data, extra_filters=field_extra_filters)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/csrf/core.py", line 44, in process
+    self.current_token = self.csrf_impl.generate_csrf_token(self)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 139, in generate_csrf_token
+    return generate_csrf(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 33, in generate_csrf
+    secret_key = _get_config(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 128, in _get_config
+    raise RuntimeError(message)
+RuntimeError: A secret key is required to use CSRF.
+2022-08-10 12:20:12,119 ERROR: Exception on /venues/create [GET] [in /media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/media/schade/New Volume1/ALX/Fyyur/app.py", line 308, in create_venue_form
+    flash('Artist ' + request.form['name'] + ' was successfully updated!')
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 208, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 157, in __init__
+    super(Form, self).__init__(*args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 87, in __init__
+    super(FlaskForm, self).__init__(formdata=formdata, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 286, in __init__
+    self.process(formdata, obj, data=data, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 127, in process
+    field.process(formdata, data, extra_filters=field_extra_filters)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/csrf/core.py", line 44, in process
+    self.current_token = self.csrf_impl.generate_csrf_token(self)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 139, in generate_csrf_token
+    return generate_csrf(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 33, in generate_csrf
+    secret_key = _get_config(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 128, in _get_config
+    raise RuntimeError(message)
+RuntimeError: A secret key is required to use CSRF.
+2022-08-10 12:20:28,125 ERROR: Exception on /venues/create [GET] [in /media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/media/schade/New Volume1/ALX/Fyyur/app.py", line 308, in create_venue_form
+    return redirect(url_for('index'))
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 208, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 157, in __init__
+    super(Form, self).__init__(*args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 87, in __init__
+    super(FlaskForm, self).__init__(formdata=formdata, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 286, in __init__
+    self.process(formdata, obj, data=data, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 127, in process
+    field.process(formdata, data, extra_filters=field_extra_filters)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/csrf/core.py", line 44, in process
+    self.current_token = self.csrf_impl.generate_csrf_token(self)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 139, in generate_csrf_token
+    return generate_csrf(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 33, in generate_csrf
+    secret_key = _get_config(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 128, in _get_config
+    raise RuntimeError(message)
+RuntimeError: A secret key is required to use CSRF.
+2022-08-10 12:20:29,041 ERROR: Exception on /venues/create [GET] [in /media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/media/schade/New Volume1/ALX/Fyyur/app.py", line 308, in create_venue_form
+    return redirect(url_for('index'))
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 208, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 157, in __init__
+    super(Form, self).__init__(*args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 87, in __init__
+    super(FlaskForm, self).__init__(formdata=formdata, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 286, in __init__
+    self.process(formdata, obj, data=data, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 127, in process
+    field.process(formdata, data, extra_filters=field_extra_filters)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/csrf/core.py", line 44, in process
+    self.current_token = self.csrf_impl.generate_csrf_token(self)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 139, in generate_csrf_token
+    return generate_csrf(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 33, in generate_csrf
+    secret_key = _get_config(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 128, in _get_config
+    raise RuntimeError(message)
+RuntimeError: A secret key is required to use CSRF.
+2022-08-10 12:29:01,803 INFO: errors [in /media/schade/New Volume1/ALX/Fyyur/app.py:418]
+2022-08-10 12:29:03,258 ERROR: Exception on /artists/create [GET] [in /media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/media/schade/New Volume1/ALX/Fyyur/app.py", line 321, in create_artist_form
+    form = ArtistForm()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 208, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 157, in __init__
+    super(Form, self).__init__(*args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 87, in __init__
+    super(FlaskForm, self).__init__(formdata=formdata, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 286, in __init__
+    self.process(formdata, obj, data=data, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 127, in process
+    field.process(formdata, data, extra_filters=field_extra_filters)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/csrf/core.py", line 44, in process
+    self.current_token = self.csrf_impl.generate_csrf_token(self)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 139, in generate_csrf_token
+    return generate_csrf(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 33, in generate_csrf
+    secret_key = _get_config(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 128, in _get_config
+    raise RuntimeError(message)
+RuntimeError: A secret key is required to use CSRF.
+2022-08-10 12:29:09,871 ERROR: Exception on /artists/create [GET] [in /media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/media/schade/New Volume1/ALX/Fyyur/app.py", line 321, in create_artist_form
+    form = ArtistForm()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 208, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 157, in __init__
+    super(Form, self).__init__(*args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 87, in __init__
+    super(FlaskForm, self).__init__(formdata=formdata, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 286, in __init__
+    self.process(formdata, obj, data=data, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 127, in process
+    field.process(formdata, data, extra_filters=field_extra_filters)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/csrf/core.py", line 44, in process
+    self.current_token = self.csrf_impl.generate_csrf_token(self)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 139, in generate_csrf_token
+    return generate_csrf(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 33, in generate_csrf
+    secret_key = _get_config(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 128, in _get_config
+    raise RuntimeError(message)
+RuntimeError: A secret key is required to use CSRF.
+2022-08-10 12:29:10,752 ERROR: Exception on /artists/create [GET] [in /media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/media/schade/New Volume1/ALX/Fyyur/app.py", line 321, in create_artist_form
+    form = ArtistForm()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 208, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 157, in __init__
+    super(Form, self).__init__(*args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 87, in __init__
+    super(FlaskForm, self).__init__(formdata=formdata, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 286, in __init__
+    self.process(formdata, obj, data=data, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 127, in process
+    field.process(formdata, data, extra_filters=field_extra_filters)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/csrf/core.py", line 44, in process
+    self.current_token = self.csrf_impl.generate_csrf_token(self)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 139, in generate_csrf_token
+    return generate_csrf(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 33, in generate_csrf
+    secret_key = _get_config(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 128, in _get_config
+    raise RuntimeError(message)
+RuntimeError: A secret key is required to use CSRF.
+2022-08-10 12:29:11,573 ERROR: Exception on /artists/create [GET] [in /media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/media/schade/New Volume1/ALX/Fyyur/app.py", line 321, in create_artist_form
+    form = ArtistForm()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 208, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 157, in __init__
+    super(Form, self).__init__(*args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 87, in __init__
+    super(FlaskForm, self).__init__(formdata=formdata, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 286, in __init__
+    self.process(formdata, obj, data=data, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 127, in process
+    field.process(formdata, data, extra_filters=field_extra_filters)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/csrf/core.py", line 44, in process
+    self.current_token = self.csrf_impl.generate_csrf_token(self)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 139, in generate_csrf_token
+    return generate_csrf(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 33, in generate_csrf
+    secret_key = _get_config(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 128, in _get_config
+    raise RuntimeError(message)
+RuntimeError: A secret key is required to use CSRF.
+2022-08-10 12:29:20,416 ERROR: Exception on /artists/create [GET] [in /media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/media/schade/New Volume1/ALX/Fyyur/app.py", line 321, in create_artist_form
+    form = ArtistForm()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 208, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 157, in __init__
+    super(Form, self).__init__(*args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 87, in __init__
+    super(FlaskForm, self).__init__(formdata=formdata, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 286, in __init__
+    self.process(formdata, obj, data=data, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 127, in process
+    field.process(formdata, data, extra_filters=field_extra_filters)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/csrf/core.py", line 44, in process
+    self.current_token = self.csrf_impl.generate_csrf_token(self)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 139, in generate_csrf_token
+    return generate_csrf(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 33, in generate_csrf
+    secret_key = _get_config(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 128, in _get_config
+    raise RuntimeError(message)
+RuntimeError: A secret key is required to use CSRF.
+2022-08-10 12:29:21,142 ERROR: Exception on /artists/create [GET] [in /media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/media/schade/New Volume1/ALX/Fyyur/app.py", line 321, in create_artist_form
+    form = ArtistForm()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 208, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 157, in __init__
+    super(Form, self).__init__(*args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 87, in __init__
+    super(FlaskForm, self).__init__(formdata=formdata, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 286, in __init__
+    self.process(formdata, obj, data=data, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 127, in process
+    field.process(formdata, data, extra_filters=field_extra_filters)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/csrf/core.py", line 44, in process
+    self.current_token = self.csrf_impl.generate_csrf_token(self)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 139, in generate_csrf_token
+    return generate_csrf(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 33, in generate_csrf
+    secret_key = _get_config(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 128, in _get_config
+    raise RuntimeError(message)
+RuntimeError: A secret key is required to use CSRF.
+2022-08-10 12:31:25,203 INFO: errors [in /media/schade/New Volume1/ALX/Fyyur/app.py:418]
+2022-08-10 12:31:25,207 ERROR: Exception on /artists/create [GET] [in /media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/media/schade/New Volume1/ALX/Fyyur/app.py", line 321, in create_artist_form
+    form = ArtistForm()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 208, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 157, in __init__
+    super(Form, self).__init__(*args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 87, in __init__
+    super(FlaskForm, self).__init__(formdata=formdata, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 286, in __init__
+    self.process(formdata, obj, data=data, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 127, in process
+    field.process(formdata, data, extra_filters=field_extra_filters)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/csrf/core.py", line 44, in process
+    self.current_token = self.csrf_impl.generate_csrf_token(self)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 139, in generate_csrf_token
+    return generate_csrf(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 33, in generate_csrf
+    secret_key = _get_config(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 128, in _get_config
+    raise RuntimeError(message)
+RuntimeError: A secret key is required to use CSRF.
+2022-08-10 12:31:31,443 ERROR: Exception on /artists/create [GET] [in /media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/media/schade/New Volume1/ALX/Fyyur/app.py", line 321, in create_artist_form
+    form = ArtistForm()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 208, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 157, in __init__
+    super(Form, self).__init__(*args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 87, in __init__
+    super(FlaskForm, self).__init__(formdata=formdata, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 286, in __init__
+    self.process(formdata, obj, data=data, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 127, in process
+    field.process(formdata, data, extra_filters=field_extra_filters)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/csrf/core.py", line 44, in process
+    self.current_token = self.csrf_impl.generate_csrf_token(self)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 139, in generate_csrf_token
+    return generate_csrf(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 33, in generate_csrf
+    secret_key = _get_config(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 128, in _get_config
+    raise RuntimeError(message)
+RuntimeError: A secret key is required to use CSRF.
+2022-08-10 12:31:32,225 ERROR: Exception on /artists/create [GET] [in /media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/media/schade/New Volume1/ALX/Fyyur/app.py", line 321, in create_artist_form
+    form = ArtistForm()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 208, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 157, in __init__
+    super(Form, self).__init__(*args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 87, in __init__
+    super(FlaskForm, self).__init__(formdata=formdata, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 286, in __init__
+    self.process(formdata, obj, data=data, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 127, in process
+    field.process(formdata, data, extra_filters=field_extra_filters)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/csrf/core.py", line 44, in process
+    self.current_token = self.csrf_impl.generate_csrf_token(self)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 139, in generate_csrf_token
+    return generate_csrf(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 33, in generate_csrf
+    secret_key = _get_config(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 128, in _get_config
+    raise RuntimeError(message)
+RuntimeError: A secret key is required to use CSRF.
+2022-08-10 12:31:41,649 ERROR: Exception on /artists/create [GET] [in /media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/media/schade/New Volume1/ALX/Fyyur/app.py", line 321, in create_artist_form
+    form = ArtistForm()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 208, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 157, in __init__
+    super(Form, self).__init__(*args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 87, in __init__
+    super(FlaskForm, self).__init__(formdata=formdata, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 286, in __init__
+    self.process(formdata, obj, data=data, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 127, in process
+    field.process(formdata, data, extra_filters=field_extra_filters)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/csrf/core.py", line 44, in process
+    self.current_token = self.csrf_impl.generate_csrf_token(self)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 139, in generate_csrf_token
+    return generate_csrf(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 33, in generate_csrf
+    secret_key = _get_config(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 128, in _get_config
+    raise RuntimeError(message)
+RuntimeError: A secret key is required to use CSRF.
+2022-08-10 12:32:52,042 ERROR: Exception on /artists/create [GET] [in /media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/media/schade/New Volume1/ALX/Fyyur/app.py", line 321, in create_artist_form
+    form = ArtistForm()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 208, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 157, in __init__
+    super(Form, self).__init__(*args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 87, in __init__
+    super(FlaskForm, self).__init__(formdata=formdata, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 286, in __init__
+    self.process(formdata, obj, data=data, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 127, in process
+    field.process(formdata, data, extra_filters=field_extra_filters)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/csrf/core.py", line 44, in process
+    self.current_token = self.csrf_impl.generate_csrf_token(self)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 139, in generate_csrf_token
+    return generate_csrf(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 33, in generate_csrf
+    secret_key = _get_config(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 128, in _get_config
+    raise RuntimeError(message)
+RuntimeError: A secret key is required to use CSRF.
+2022-08-10 12:32:53,336 ERROR: Exception on /artists/create [GET] [in /media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/media/schade/New Volume1/ALX/Fyyur/app.py", line 321, in create_artist_form
+    form = ArtistForm()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 208, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 157, in __init__
+    super(Form, self).__init__(*args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 87, in __init__
+    super(FlaskForm, self).__init__(formdata=formdata, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 286, in __init__
+    self.process(formdata, obj, data=data, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 127, in process
+    field.process(formdata, data, extra_filters=field_extra_filters)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/csrf/core.py", line 44, in process
+    self.current_token = self.csrf_impl.generate_csrf_token(self)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 139, in generate_csrf_token
+    return generate_csrf(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 33, in generate_csrf
+    secret_key = _get_config(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 128, in _get_config
+    raise RuntimeError(message)
+RuntimeError: A secret key is required to use CSRF.
+2022-08-10 12:32:54,134 ERROR: Exception on /artists/create [GET] [in /media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/media/schade/New Volume1/ALX/Fyyur/app.py", line 321, in create_artist_form
+    form = ArtistForm()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 208, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 157, in __init__
+    super(Form, self).__init__(*args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 87, in __init__
+    super(FlaskForm, self).__init__(formdata=formdata, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 286, in __init__
+    self.process(formdata, obj, data=data, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 127, in process
+    field.process(formdata, data, extra_filters=field_extra_filters)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/csrf/core.py", line 44, in process
+    self.current_token = self.csrf_impl.generate_csrf_token(self)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 139, in generate_csrf_token
+    return generate_csrf(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 33, in generate_csrf
+    secret_key = _get_config(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 128, in _get_config
+    raise RuntimeError(message)
+RuntimeError: A secret key is required to use CSRF.
+2022-08-10 12:32:54,921 ERROR: Exception on /artists/create [GET] [in /media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/media/schade/New Volume1/ALX/Fyyur/app.py", line 321, in create_artist_form
+    form = ArtistForm()
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 208, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 157, in __init__
+    super(Form, self).__init__(*args, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/form.py", line 87, in __init__
+    super(FlaskForm, self).__init__(formdata=formdata, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 286, in __init__
+    self.process(formdata, obj, data=data, **kwargs)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/form.py", line 127, in process
+    field.process(formdata, data, extra_filters=field_extra_filters)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/wtforms/csrf/core.py", line 44, in process
+    self.current_token = self.csrf_impl.generate_csrf_token(self)
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 139, in generate_csrf_token
+    return generate_csrf(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 33, in generate_csrf
+    secret_key = _get_config(
+  File "/media/schade/New Volume1/ALX/fyyurvenv/lib/python3.9/site-packages/flask_wtf/csrf.py", line 128, in _get_config
+    raise RuntimeError(message)
+RuntimeError: A secret key is required to use CSRF.
