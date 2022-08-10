@@ -3,8 +3,6 @@
 #----------------------------------------------------------------------------#
 
 import os
-import json
-from unicodedata import name
 import dateutil.parser
 import babel
 from flask import Flask, render_template, request, Response, flash, redirect, url_for
@@ -175,15 +173,22 @@ def search_venues():
   # TODO: implement search on artists with partial string search. Ensure it is case-insensitive.
   # seach for Hop should return "The Musical Hop".
   # search for "Music" should return "The Musical Hop" and "Park Square Live Music & Coffee"
-  response={
-    "count": 1,
-    "data": [{
-      "id": 2,
-      "name": "The Dueling Pianos Bar",
-      "num_upcoming_shows": 0,
-    }]
+  # response={
+  #   "count": 1,
+  #   "data": [{
+  #     "id": 2,
+  #     "name": "The Dueling Pianos Bar",
+  #     "num_upcoming_shows": 0,
+  #   }]
+  # }
+  search_term = request.form.get('search_term', '')
+  venues = Venue.query.filter(Venue.name.ilike('%' + search_term+ '%'))
+  response = {
+    "count": venues.count()
   }
-  return render_template('pages/search_venues.html', results=response, search_term=request.form.get('search_term', ''))
+
+  return render_template('pages/search_venues.html', venues=venues, results=response, search_term=search_term)
+  #return render_template('pages/search_venues.html', results=response, search_term=request.form.get('search_term', ''))
 
 @app.route('/venues/<int:venue_id>')
 def show_venue(venue_id):
@@ -268,8 +273,32 @@ def show_venue(venue_id):
   #   "upcoming_shows_count": 1,
   # }
   #data = list(filter(lambda d: d['id'] == venue_id, [data1, data2, data3]))[0]
+  upcoming_shows = []
+  past_shows = []
+  current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
   venue = Venue.query.get(venue_id)
-  return render_template('pages/show_venue.html', venue=venue)
+  shows = Show.query.filter_by(venue_id=venue_id)
+  upcoming_shows_count = 0
+  past_shows_count = 0
+  for show in shows:
+    artist = Artist.query.get(show.artist_id)
+    if show.start_time > current_time:
+      upcoming_shows_count+=1
+      upcoming_shows.append({
+        "artist_id": show.venue_id,
+        "artist_name": artist.name,
+        "artist_image_link": artist.image_link,
+        "start_time": show.start_time,
+      })
+    else:
+      past_shows_count+=1
+      past_shows.append({
+        "artist_id": show.venue_id,
+        "artist_name": artist.name,
+        "artist_image_link":artist.image_link,
+        "start_time": show.start_time,
+      })
+  return render_template('pages/show_venue.html', venue=venue, past_shows=past_shows, upcoming_shows=upcoming_shows, past_shows_count=past_shows_count, upcoming_shows_count=upcoming_shows_count)
 
 #  Create Venue
 #  ----------------------------------------------------------------
@@ -311,14 +340,18 @@ def create_venue_submission():
     # see: http://flask.pocoo.org/docs/1.0/patterns/flashing/
   return render_template('pages/home.html')
 
-@app.route('/venues/<venue_id>', methods=['DELETE'])
+@app.route('/venues/<int:venue_id>/delete', methods=['POST'])
 def delete_venue(venue_id):
   # TODO: Complete this endpoint for taking a venue_id, and using
   # SQLAlchemy ORM to delete a record. Handle cases where the session commit could fail.
 
   # BONUS CHALLENGE: Implement a button to delete a Venue on a Venue Page, have it so that
   # clicking that button delete it from the db then redirect the user to the homepage
-  return None
+  venue = Venue.query.get(venue_id)
+  db.session.delete(venue)
+  db.session.commit()
+  flash('Venue was successfully deleted!')
+  return render_template('pages/home.html')
 
 #  Artists
 #  ----------------------------------------------------------------
@@ -343,15 +376,22 @@ def search_artists():
   # TODO: implement search on artists with partial string search. Ensure it is case-insensitive.
   # seach for "A" should return "Guns N Petals", "Matt Quevado", and "The Wild Sax Band".
   # search for "band" should return "The Wild Sax Band".
-  response={
-    "count": 1,
-    "data": [{
-      "id": 4,
-      "name": "Guns N Petals",
-      "num_upcoming_shows": 0,
-    }]
+  # response={
+  #   "count": 1,
+  #   "data": [{
+  #     "id": 4,
+  #     "name": "Guns N Petals",
+  #     "num_upcoming_shows": 0,
+  #   }]
+  # }
+  search_term = request.form.get('search_term', '')
+  artists = Artist.query.filter(Artist.name.ilike('%' + search_term+ '%'))
+  response = {
+    "count": artists.count()
   }
-  return render_template('pages/search_artists.html', results=response, search_term=request.form.get('search_term', ''))
+
+  return render_template('pages/search_artists.html', artists=artists, results=response, search_term=search_term)
+  #return render_template('pages/search_artists.html', results=response, search_term=request.form.get('search_term', ''))
 
 @app.route('/artists/<int:artist_id>')
 def show_artist(artist_id):
@@ -425,12 +465,38 @@ def show_artist(artist_id):
   #     "venue_image_link": "https://images.unsplash.com/photo-1485686531765-ba63b07845a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=747&q=80",
   #     "start_time": "2035-04-15T20:00:00.000Z"
   #   }],
-  #   "past_shows_count": 0,
+  #   "past_shows_count": 0,:
   #   "upcoming_shows_count": 3,
   # }
   #data = list(filter(lambda d: d['id'] == artist_id, [data1, data2, data3]))[0]
+  upcoming_shows = []
+  past_shows = []
+  current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
   artist = Artist.query.get(artist_id)
-  return render_template('pages/show_artist.html', artist=artist)
+  shows = Show.query.filter_by(artist_id=artist_id)
+  upcoming_shows_count = 0
+  past_shows_count = 0
+  for show in shows:
+    venue = Venue.query.get(show.venue_id)
+    count = 0
+    if show.start_time > current_time:
+      upcoming_shows_count+=1
+      upcoming_shows.append({
+        "venue_id": show.venue_id,
+        "venue_name": venue.name,
+        "venue_image_link": venue.image_link,
+        "start_time": show.start_time,
+      })
+    else:
+      past_shows_count+=1
+      past_shows.append({
+        "count": count,
+        "venue_id": show.venue_id,
+        "venue_name": venue.name,
+        "venue_image_link":venue.image_link,
+        "start_time": show.start_time,
+      })
+  return render_template('pages/show_artist.html', artist=artist, past_shows=past_shows, upcoming_shows=upcoming_shows, past_shows_count=past_shows_count, upcoming_shows_count=upcoming_shows_count)
 
 #  Update
 #  ----------------------------------------------------------------
